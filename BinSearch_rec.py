@@ -1,14 +1,14 @@
 def Binary_Search(my_Array,num_to_search,first,last):
 #    first = 0
  #   last = len(my_Array) - 1
-    if (last < first):
+    if (last <= first):
        return False
     else:
        middle = (first + last)//2
        if(my_Array[middle]< num_to_search):
         first = middle + 1
-        last = len(my_Array) - 1
-
+        # You should NOT set last here, because in this condition the last remains same. and logically last is not ALWAYS the end of array. 
+#        last = len(my_Array) - 1 
         return Binary_Search(my_Array,num_to_search,first,last)
        elif(my_Array[middle]> num_to_search):
         first = 0
